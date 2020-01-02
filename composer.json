@@ -1,0 +1,35 @@
+{
+    "name": "codebykyle/laravel-rabbitmq-model-publisher",
+    "description": "Publish model events to RabbitMQ",
+    "keywords": [
+        "laravel",
+        "rabbitmq",
+        "amqp",
+        "microservice",
+        "crud"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "bschmitt/laravel-amqp": "^2.0",
+        "illuminate/config": "^6.0",
+        "illuminate/support": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeByKyle\\LaravelRabbitMqModelPublisher\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodeByKyle\\LaravelRabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
