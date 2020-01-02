@@ -12,8 +12,8 @@
     "require": {
         "php": ">=7.1.0",
         "bschmitt/laravel-amqp": "^2.0",
-        "illuminate/config": "^6.0",
-        "illuminate/support": "^6.0"
+        "illuminate/config": ">=v5.5.28",
+        "illuminate/support": ">=v5.5.28"
     },
     "autoload": {
         "psr-4": {
