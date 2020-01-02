@@ -2,7 +2,7 @@
 
 namespace CodeByKyle\LaravelRabbitMqModelPublisher;
 
-class RabbitMqModelListenerProvider extends \Illuminate\Support\ServiceProvider
+class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
