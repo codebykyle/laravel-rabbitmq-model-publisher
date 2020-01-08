@@ -23,7 +23,10 @@
         "laravel": {
             "providers": [
                 "CodeByKyle\\LaravelRabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
-            ]
+            ],
+            "aliases": {
+                "RabbitMqModelListener": "CodeByKyle\\LaravelRabbitMqModelListener\\Facades\\LaravelRabbitMqModelListener"
+            }
         }
     },
     "config": {
