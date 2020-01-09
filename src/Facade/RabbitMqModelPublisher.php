@@ -5,7 +5,7 @@ namespace CodeByKyle\RabbitMqModelPublisher\Facades;
 /**
  * Class RabbitMqModelPublisher
  * @package CodeByKyle\LaravelRabbitMqModelPublisher
- * @see CodeByKyle\LaravelRabbitMqModelPublisher\RabbitMqModelPublisher
+ * @see CodeByKyle\RabbitMqModelPublisher\RabbitMqModelPublisher
  */
 class RabbitMqModelPublisher
 {
