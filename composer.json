@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CodeByKyle\\LaravelRabbitMqModelPublisher\\": "src/"
+            "CodeByKyle\\RabbitMqModelPublisherProvider\\": "src/"
         }
     },
     "extra": {
