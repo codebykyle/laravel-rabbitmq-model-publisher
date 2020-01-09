@@ -22,10 +22,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CodeByKyle\\LaravelRabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
+                "CodeByKyle\\RabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
             ],
             "aliases": {
-                "RabbitMqModelListener": "CodeByKyle\\LaravelRabbitMqModelPublisher\\Facades\\RabbitMqModelPublisher"
+                "RabbitMqModelListener": "CodeByKyle\\RabbitMqModelPublisher\\Facades\\RabbitMqModelPublisher"
             }
         }
     },

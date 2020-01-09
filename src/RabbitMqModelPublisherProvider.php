@@ -1,15 +1,15 @@
 <?php
 
-namespace CodeByKyle\LaravelRabbitMqModelPublisher;
+namespace CodeByKyle\RabbitMqModelPublisher;
 
 class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
-        $this->app->bind('RabbitMqModelPublisher', 'CodeByKyle\LaravelRabbitMqModelPublisher');
+        $this->app->bind('RabbitMqModelPublisher', 'CodeByKyle\RabbitMqModelPublisher');
 
         if (!class_exists('RabbitMqModelPublisher')) {
-            class_alias('CodeByKyle\LaravelRabbitMqModelPublisher\Facades\RabbitMqModelPublisher', 'LaravelRabbitMqModelPublisher');
+            class_alias('CodeByKyle\RabbitMqModelPublisher\Facades\RabbitMqModelPublisher', 'RabbitMqModelPublisher');
         }
 
         $this->publishes([
@@ -30,7 +30,7 @@ class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
     {
         return [
             'RabbitMqModelPublisher',
-            'CodeByKyle\LaravelRabbitMqModelPublisher'
+            'CodeByKyle\RabbitMqModelPublisher'
         ];
     }
 }
