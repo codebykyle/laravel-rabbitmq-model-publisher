@@ -3,6 +3,7 @@
 namespace CodeByKyle\RabbitMqModelPublisher;
 
 use Bschmitt\Amqp\Publisher;
+use Illuminate\Config\Repository;
 
 class RabbitMqModelPublisher
 {
@@ -10,7 +11,9 @@ class RabbitMqModelPublisher
 
     public function __construct(array $config)
     {
-        $this->publisher = new Publisher($config);
+        $this->publisher = new Publisher(
+            new Repository($config)
+        );
     }
 
     public function test(){
