@@ -13,7 +13,7 @@ class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
         }
 
         $this->publishes([
-            __DIR__ . '../config/rabbitmq-model-publisher.php' => config_path('rabbitmq-model-publisher.php')
+            __DIR__ . '/../config/rabbitmq-model-publisher.php' => config_path('rabbitmq-model-publisher.php')
         ]);
     }
 
