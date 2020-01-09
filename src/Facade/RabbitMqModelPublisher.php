@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeByKyle\Facades\LaravelRabbitMqModelPublisher;
+namespace CodeByKyle\LaravelRabbitMqModelPublisher\Facades;
 
 /**
  * Class RabbitMqModelPublisher
