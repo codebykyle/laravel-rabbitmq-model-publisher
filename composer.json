@@ -25,7 +25,7 @@
                 "CodeByKyle\\LaravelRabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
             ],
             "aliases": {
-                "RabbitMqModelListener": "CodeByKyle\\LaravelRabbitMqModelListener\\Facades\\LaravelRabbitMqModePublisher"
+                "RabbitMqModelListener": "CodeByKyle\\LaravelRabbitMqModelPublisher\\Facades\\LaravelRabbitMqModePublisher"
             }
         }
     },
