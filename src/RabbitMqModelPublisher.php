@@ -13,7 +13,7 @@ class RabbitMqModelPublisher
         $this->publisher = new Publisher($config);
     }
 
-    public function consoleTest(){
+    public function test(){
         return "Hello!";
     }
 }

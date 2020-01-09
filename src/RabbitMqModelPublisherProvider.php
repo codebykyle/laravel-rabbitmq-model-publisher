@@ -19,7 +19,7 @@ class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-        $this->app->singleton('RabbitMqModelPublisher', function ($app) {
+        $this->app->singleton('CodeByKyle\RabbitMqModelPublisher\RabbitMqModelPublisher', function ($app) {
             return new RabbitMqModelPublisher(
                 config('rabbitmq-model-publisher')
             );
