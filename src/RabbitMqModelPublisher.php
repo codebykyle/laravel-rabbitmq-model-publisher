@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeByKyle\LaravelRabbitMqModelPublisher;
+namespace CodeByKyle\LaravelRabbitMqModelPublisher\Facades;
 
 use Bschmitt\Amqp\Publisher;
 
