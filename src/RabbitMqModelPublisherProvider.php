@@ -9,7 +9,7 @@ class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
         $this->app->bind('RabbitMqModelPublisher', 'CodeByKyle\RabbitMqModelPublisher\RabbitMqModelPublisher');
 
         if (!class_exists('RabbitMqModelPublisher')) {
-            class_alias('CodeByKyle\RabbitMqModelPublisher\Facades\ModelPublisher', 'RabbitMqModelPublisher');
+            class_alias('CodeByKyle\RabbitMqModelPublisher\Facades\RabbitMqModelPublisher', 'RabbitMqModelPublisher');
         }
 
         $this->publishes([

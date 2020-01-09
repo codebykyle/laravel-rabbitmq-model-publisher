@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
  * @package CodeByKyle\LaravelRabbitMqModelPublisher
  * @see CodeByKyle\RabbitMqModelPublisher\RabbitMqModelPublisher
  */
-class ModelPublisher extends Facade
+class RabbitMqModelPublisher extends Facade
 {
     protected static function getFacadeAccessor()
     {
