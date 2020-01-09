@@ -6,10 +6,10 @@ class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
     {
-        $this->app->bind('RabbitMqModelPublisher', 'CodeByKyle\RabbitMqModelPublisher');
+        $this->app->bind('RabbitMqModelPublisher', 'CodeByKyle\RabbitMqModelPublisher\RabbitMqModelPublisher');
 
         if (!class_exists('RabbitMqModelPublisher')) {
-            class_alias('CodeByKyle\RabbitMqModelPublisher\Facades\RabbitMqModelPublisher', 'RabbitMqModelPublisher');
+            class_alias('CodeByKyle\RabbitMqModelPublisher\Facades\ModelPublisher', 'RabbitMqModelPublisher');
         }
 
         $this->publishes([
