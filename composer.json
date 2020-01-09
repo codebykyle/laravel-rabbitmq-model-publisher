@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CodeByKyle\\RabbitMqModelPublisherProvider\\": "src/"
+            "CodeByKyle\\RabbitMqModelPublisher\\": "src/"
         }
     },
     "extra": {
