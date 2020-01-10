@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeByKyle\LaravelRabbitMqModelPublisher\Observers;
+namespace CodeByKyle\RabbitMqModelPublisher\Observers;
 
 
 class ModelPublisherObserver

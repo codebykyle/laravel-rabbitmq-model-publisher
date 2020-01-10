@@ -16,14 +16,17 @@
     },
     "autoload": {
         "psr-4": {
-            "CodeByKyle\\LaravelRabbitMqModelPublisher\\": "src/"
+            "CodeByKyle\\RabbitMqModelPublisher\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "CodeByKyle\\LaravelRabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
-            ]
+                "CodeByKyle\\RabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
+            ],
+            "aliases": {
+                "RabbitMqModelPublisher": "CodeByKyle\\RabbitMqModelPublisher\\Facades\\RabbitMqModelPublisher"
+            }
         }
     },
     "config": {
