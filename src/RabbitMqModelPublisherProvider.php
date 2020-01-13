@@ -29,7 +29,7 @@ class RabbitMqModelPublisherProvider extends \Illuminate\Support\ServiceProvider
     public function provides()
     {
         return [
-            'RabbitMqModelPublisher',
+            'ModelPublisher',
             'CodeByKyle\RabbitMqModelPublisher'
         ];
     }

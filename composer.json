@@ -26,7 +26,7 @@
                 "CodeByKyle\\RabbitMqModelPublisher\\RabbitMqModelPublisherProvider"
             ],
             "aliases": {
-                "RabbitMqModelPublisher": "CodeByKyle\\RabbitMqModelPublisher\\Facades\\RabbitMqModelPublisher"
+                "RabbitMqModelPublisher": "CodeByKyle\\RabbitMqModelPublisher\\Facades\\ModelPublisher"
             }
         }
     },
