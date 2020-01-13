@@ -20,6 +20,4 @@ class ModelPublisherObserver
     public function restored($model) {
 
     }
-
-
 }

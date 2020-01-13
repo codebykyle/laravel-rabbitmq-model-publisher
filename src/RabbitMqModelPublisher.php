@@ -16,7 +16,16 @@ class RabbitMqModelPublisher
         );
     }
 
-    public function test(){
-        return "Hello!";
+    public function publishEvent(ModelEvent $event) {
+        $this->publisher->publish(
+            $event->getRoutingKey(),
+            $event->toMessage()
+        );
+    }
+
+    public function test(array $testEvents){
+        foreach($testEvents as $modelEvent) {
+            $this->publishEvent($modelEvent);
+        }
     }
 }
