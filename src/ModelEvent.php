@@ -5,6 +5,7 @@ namespace CodeByKyle\RabbitMqModelPublisher;
 use Bschmitt\Amqp\Message;
 use CodeByKyle\RabbitMqModelPublisher\Contracts\AmqpMessagable;
 use Illuminate\Database\Eloquent\Model;
+use PhpOption\None;
 use Ramsey\Uuid\Uuid;
 use Serializable;
 use Illuminate\Contracts\Support\Jsonable;
@@ -42,6 +43,28 @@ abstract class ModelEvent implements AmqpMessagable
     public $source;
 
     /**
+     * What type of application is dispatching this message
+     *
+     * @var string
+     */
+    public $sourceType = SourceTypes::WEBSITE;
+
+    /**
+     * What type of user submitted this request.
+     * eg: a bot, a user, an admin, an anonymous user, a webhook, etc
+     * @see UserTypes
+     * @var string
+     */
+    public $userType = UserTypes::USER;
+
+    /**
+     * The user issuing this model event
+     *
+     * @var Model|null
+     */
+    public $user;
+
+    /**
      * If there is a reply to request attached
      * @var
      */
@@ -55,18 +78,21 @@ abstract class ModelEvent implements AmqpMessagable
 
     /**
      * Which model did this affect
+     *
      * @var Model
      */
     public $model;
 
     /**
      * A dictionary of changed fields
+     *
      * @var array
      */
     public $changedFields = [];
 
     /**
      * A dictionary of all model fields
+     *
      * @var array
      */
     public $modelData = [];
@@ -88,7 +114,13 @@ abstract class ModelEvent implements AmqpMessagable
         return [
             'modelData' => $this->getModelData(),
             'changedFields' => $this->getChangedFields(),
+            'user' => $this->getUserData(),
+            'userType' => $this->userType
         ];
+    }
+
+    protected function getUserData() {
+        return $this->user->toArray();
     }
 
     /**
@@ -106,6 +138,10 @@ abstract class ModelEvent implements AmqpMessagable
      * @return array
      */
     public function getModelData() {
+        if (!empty($this->modelData)) {
+            return $this->modelData;
+        }
+
         return $this->model->toArray();
     }
 
@@ -115,6 +151,10 @@ abstract class ModelEvent implements AmqpMessagable
      * @return array
      */
     public function getChangedFields() {
+        if (!empty($this->changedFields)) {
+            return $this->changedFields;
+        }
+
         return $this->model->getChanges();
     }
 
@@ -125,7 +165,7 @@ abstract class ModelEvent implements AmqpMessagable
     public function propertiesArray() {
         return [
             'replyTo' => $this->replyTo,
-            'correlationId' => $this->getCorrelationId()
+            'correlationId' => $this->getCorrelationId(),
         ];
     }
 
@@ -158,6 +198,7 @@ abstract class ModelEvent implements AmqpMessagable
             return strtolower(
                 collect([
                     $appEnv,
+                    $this->sourceType,
                     $siteName,
                     $modelName,
                     $this->actionType
